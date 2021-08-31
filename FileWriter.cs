@@ -8,10 +8,11 @@ namespace Penguin.FileStreams
     {
         private bool disposedValue;
         private readonly StreamWriter StreamWriter;
-
+        public string FullName { get; private set; }
         public FileWriter(string fullFilePath)
         {
-            this.StreamWriter = new StreamWriter(new FileStream(fullFilePath, FileMode.Create, FileAccess.ReadWrite, FileShare.ReadWrite));
+            this.FullName = new FileInfo(fullFilePath).FullName;
+            this.StreamWriter = new StreamWriter(new FileStream(this.FullName, FileMode.Create, FileAccess.ReadWrite, FileShare.ReadWrite));
         }
 
         public void Dispose()

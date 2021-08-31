@@ -9,5 +9,7 @@ namespace Penguin.FileStreams.Interfaces
         void Write(string s);
 
         void WriteLine(string s);
+
+        string FullName { get; }
     }
 }

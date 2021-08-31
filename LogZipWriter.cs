@@ -12,10 +12,13 @@ namespace Penguin.FileStreams
         private readonly Stream FileStream;
         private readonly StreamWriter StreamWriter;
         private bool disposedValue;
+        public string FullName { get;private set;  }
 
         public ZipWriter(string fullFileName)
         {
-            this.Archive = new ZipArchive(new FileStream(fullFileName + ".zip", FileMode.Create, FileAccess.ReadWrite, FileShare.ReadWrite), ZipArchiveMode.Create, false);
+            this.FullName = new FileInfo(fullFileName + ".zip").FullName;
+
+            this.Archive = new ZipArchive(new FileStream(this.FullName, FileMode.Create, FileAccess.ReadWrite, FileShare.ReadWrite), ZipArchiveMode.Create, false);
 
             this.FileArchive = this.Archive.CreateEntry(Path.GetFileName(fullFileName), CompressionLevel.Optimal);
 

@@ -11,10 +11,11 @@ namespace Penguin.FileStreams
         private readonly StreamWriter StreamWriter;
         public GZipStream Compress { get; }
         public FileStream OutFile { get; private set; }
-
+        public string FullName { get; private set; }
         public GZipWriter(string fullFileName)
         {
-            this.OutFile = File.Create(fullFileName + ".gz");
+            this.FullName = new FileInfo(fullFileName + ".gz").FullName;
+            this.OutFile = File.Create(this.FullName);
             this.Compress = new GZipStream(this.OutFile, CompressionLevel.Optimal);
             this.StreamWriter = new StreamWriter(this.Compress);
         }
