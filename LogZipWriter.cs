@@ -40,12 +40,6 @@ namespace Penguin.FileStreams
             this.FileStream.Flush();
         }
 
-        // // TODO: override finalizer only if 'Dispose(bool disposing)' has code to free unmanaged resources
-        // ~LogZipWriter()
-        // {
-        //     // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
-        //     Dispose(disposing: false);
-        // }
         public void Write(string s)
         {
             this.StreamWriter.Write(s);
@@ -60,15 +54,13 @@ namespace Penguin.FileStreams
         {
             if (!this.disposedValue)
             {
+                this.disposedValue = true;
+
                 if (disposing)
                 {
                     this.StreamWriter.Flush();
                     this.Archive.Dispose();
                 }
-
-                // TODO: free unmanaged resources (unmanaged objects) and override finalizer
-                // TODO: set large fields to null
-                this.disposedValue = true;
             }
         }
     }
