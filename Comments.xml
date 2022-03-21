@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Penguin.FileStreams</name>
+    </assembly>
+    <members>
+        <member name="T:Penguin.FileStreams.FileStreamCompression">
+            <summary>
+            Compression method for FileStreams
+            </summary>
+        </member>
+        <member name="F:Penguin.FileStreams.FileStreamCompression.None">
+            <summary>
+            Files are written as plain text
+            </summary>
+        </member>
+        <member name="F:Penguin.FileStreams.FileStreamCompression.Gzip">
+            <summary>
+            Files are wrapped in a Gzip stream
+            </summary>
+        </member>
+        <member name="F:Penguin.FileStreams.FileStreamCompression.Zip">
+            <summary>
+            Files are written directly into a Zip stream, which is closed on dispose
+            </summary>
+        </member>
+    </members>
+</doc>
