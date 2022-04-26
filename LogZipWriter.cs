@@ -12,7 +12,7 @@ namespace Penguin.FileStreams
         private readonly Stream FileStream;
         private readonly StreamWriter StreamWriter;
         private bool disposedValue;
-        public string FullName { get;private set;  }
+        public string FullName { get; private set; }
 
         public ZipWriter(string fullFileName)
         {
@@ -40,15 +40,9 @@ namespace Penguin.FileStreams
             this.FileStream.Flush();
         }
 
-        public void Write(string s)
-        {
-            this.StreamWriter.Write(s);
-        }
+        public void Write(string s) => this.StreamWriter.Write(s);
 
-        public void WriteLine(string s)
-        {
-            this.StreamWriter.WriteLine(s);
-        }
+        public void WriteLine(string s) => this.StreamWriter.WriteLine(s);
 
         protected virtual void Dispose(bool disposing)
         {
