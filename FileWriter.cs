@@ -22,9 +22,15 @@ namespace Penguin.FileStreams
             GC.SuppressFinalize(this);
         }
 
-        public void Flush() => this.StreamWriter.Flush();
+        public void Flush()
+        {
+            this.StreamWriter.Flush();
+        }
 
-        public void Write(string s) => this.StreamWriter.Write(s);
+        public void Write(string s)
+        {
+            this.StreamWriter.Write(s);
+        }
 
         // // TODO: override finalizer only if 'Dispose(bool disposing)' has code to free unmanaged resources
         // ~LogStreamWriter()
@@ -32,7 +38,10 @@ namespace Penguin.FileStreams
         //     // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
         //     Dispose(disposing: false);
         // }
-        public void WriteLine(string s) => this.StreamWriter.WriteLine(s);
+        public void WriteLine(string s)
+        {
+            this.StreamWriter.WriteLine(s);
+        }
 
         protected virtual void Dispose(bool disposing)
         {

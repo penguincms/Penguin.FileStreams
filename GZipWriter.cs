@@ -39,9 +39,15 @@ namespace Penguin.FileStreams
             this.Compress.Flush();
         }
 
-        public void Write(string s) => this.StreamWriter.Write(s);
+        public void Write(string s)
+        {
+            this.StreamWriter.Write(s);
+        }
 
-        public void WriteLine(string s) => this.StreamWriter.WriteLine(s);
+        public void WriteLine(string s)
+        {
+            this.StreamWriter.WriteLine(s);
+        }
 
         protected virtual void Dispose(bool disposing)
         {
